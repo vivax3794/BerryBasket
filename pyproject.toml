@@ -1,0 +1,26 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "vivax3794", email = "vivax3794@protonmail.com"},
+]
+dependencies = [
+    "python-dotenv>=0.20.0",
+    "sanic[ext]>=22.3.1",
+    "loguru>=0.6.0",
+    "psutil>=5.9.0",
+]
+requires-python = ">=3.10,<3.11"
+license = {text = "MIT"}
+[tool.pdm]
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
+
+[tool.pyright]
+typeCheckingMode = "strict"
+extraPaths = ["__pypackages__/3.10/lib"]
+ignore = ["__pypackages__/"]
+include = ["src"]
