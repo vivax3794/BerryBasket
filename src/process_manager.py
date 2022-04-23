@@ -57,7 +57,7 @@ class ProcessManager:
         logger.info(f"stopped {self.name}")
     
     def update_program(self) -> None:
-        subprocess.run(["git", "pull"], cwd=self.folder, env={"PATH": os.environ["PATH"]})
+        subprocess.run(["git", "pull"], cwd=self.folder)
         logger.info(f"updaded {self.name}")
 
     def is_running(self) -> bool:
