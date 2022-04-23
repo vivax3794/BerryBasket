@@ -21,7 +21,7 @@ def start_up():
             projects[project.name] = project
             logger.info(f"loaded {project.name}")
     
-    app.run(host=0.0.0.0)  # type: ignore
+    app.run(host="0.0.0.0")  # type: ignore
 
 
 @app.get("/")
