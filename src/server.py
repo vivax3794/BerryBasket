@@ -20,9 +20,6 @@ def start_up():
             project = ProcessManager(data)
             projects[project.name] = project
             logger.info(f"loaded {project.name}")
-    
-    app.run(host="0.0.0.0")  # type: ignore
-
 
 @app.get("/")
 @openapi.response(200, dict[str, bool], description="Sucess")
@@ -84,3 +81,6 @@ async def start_process(request: Request, project_name: str ) -> HTTPResponse:
         project.start_process()
     
     return response.empty(200)
+
+
+start_up()
